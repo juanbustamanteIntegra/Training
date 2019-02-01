@@ -28,4 +28,19 @@ $(document).ready(function() {
       e.preventDefault();
     }
   });
+  
+  $(".login-form").submit(function(e) {
+    var emailVal = $("#loginEmail").val().toLowerCase();
+    var passVal = $("#loginPass").val().toLowerCase();
+    if(emailVal.length == 0 || passVal.length == 0)
+    {
+      alert("Please enter all the fields.");
+      e.preventDefault();
+    }
+	else if(! validateEmail(emailVal))
+    {
+      alert("Please enter a valid email.");
+      e.preventDefault();
+    }
+  });
 })

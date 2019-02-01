@@ -13,8 +13,6 @@ public class SESEmail {
 
   static final String FROM = "juan.bustamante@integrait.co";
 
-  static final String TO = "luis.talero@integrait.co";
-
   // static final String CONFIGSET = "ConfigSet";
 
   // The subject line for the email.
