@@ -1,0 +1,83 @@
+@()
+
+@main("Intro Dev") {
+  <script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+  <link rel="stylesheet" type="text/css" href="/assets/stylesheets/index.css">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">IntegraIT Training App</a>
+      </div>
+      <div class="navbar-form navbar-right">
+        <div class="form-group">
+          <input id="filter" type="text" class="form-control" name="search" placeholder="Skill searched">
+        </div>
+        <a href='@controllers.routes.AuthController.logout()'><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <h2>Enter a new person</h2>
+    <form method="POST" action="@routes.PersonController.addPerson()">
+      <input type="text" placeholder="Name" name="name"/>
+      <input type="text" placeholder="Skill" name="skill"/>
+      <button>Add Person</button>
+    </form>
+  </div>
+
+  <div class="container-fluid">
+    <h2>People List</h2>
+    <div class="limiter">
+      <div class="container-table100">
+        <div class="wrap-table100">
+          <div class="table100 ver4 m-b-110">
+            <div class="table100-head">
+              <table>
+                <thead>
+                  <tr class="row100 head">
+                    <th class="cell100 column1">#</th>
+                    <th class="cell100 column2">Name</th>
+                    <th class="cell100 column3">Skill</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+
+            <div class="table100-body js-pscroll">
+              <table id="thetable">
+                <tbody>
+                  <tr class="row100 body">
+                    <td class="cell100 column1">Like a butterfly</td>
+                    <td class="cell100 column2">Boxing</td>
+                    <td class="cell100 column3">9:00 AM - 11:00 AM</td>
+                  </tr>
+                  <tr class="row100 body">
+                    <td class="cell100 column1">Virtual Cycle</td>
+                    <td class="cell100 column2">Gym</td>
+                    <td class="cell100 column3">8:00 AM - 9:00 AM</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <table id="thetable">
+    <tr>
+    <th>Header 1</th>
+    <th>Header 2</th>
+  </tr>
+  <tr>
+  <td>Middle row, will be deleted</td>
+  <td>You will not see this</td>
+</tr>
+<tr>
+<td>row 2, cell 1</td>
+<td>row 2, cell 2</td>
+</tr>
+</table> -->
+</div>
+
+}

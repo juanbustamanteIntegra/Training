@@ -1,0 +1,30 @@
+@()
+
+@main("Intro Dev") {
+  <script type='text/javascript' src='@routes.Assets.at("javascripts/login.js")'></script>
+  <link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+  <div class="login-page container-fluid">
+    <div class="row">
+    <div class="col-sm-5">
+    <div class="form">
+      <form class="register-form" method="POST" action="@routes.AuthController.createUser()">
+        <input id="createName" type="text" name="name" placeholder="Name"/>
+        <input id="createEmail" type="text" name="email" placeholder="Email Address"/>
+        <input id="createPass" type="password" name="password" placeholder="Password"/>
+        <input id="createCPass" type="password" name="passwordConfirm" placeholder="Confirm Password"/>
+        <button>create</button>
+      </form>
+      </div>
+    </div>
+    <div class="col-sm-5">
+    <div class="form">
+    <form class="login-form" method="POST" action="@routes.AuthController.login()">
+      <input id="loginEmail" type="text" name="email" placeholder="Email Address"/>
+      <input id="loginPass" type="password" name="password" placeholder="Password"/>
+      <button>login</button>
+    </form>
+    </div>
+    </div>
+  </div>
+</div>
+}
